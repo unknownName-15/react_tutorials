@@ -58,18 +58,19 @@ const Header = () => {
           mobileOpen && (
             <div className='absolute right-0 z-50 bg-white w-full pb-0 flex flex-col justify-center items-center lg:hidden top-full dark:bg-neutral-900 border-b border-neutral-700 mt-1'>
               <ul className='w-full'>
-                {navItems.map((item, index) => (
-                  <li key={index} className='py-4 border-b border-neutral-700 w-full text-center'>
-                    <Link to={item.to} className='block w-full h-full'>{item.label}</Link>
-                  </li>
-                ))}
+                {
+                  navItems.map((item, index) => (
+                    <li key={index} className='py-4 border-b border-neutral-700 w-full text-center'>
+                      <Link to={item.to} className='block w-full h-full'>{item.label}</Link>
+                    </li>
+                  ))
+                }
               </ul>
               <div className='flex py-4 gap-2'>
                 {
                   authLink.map((item, index) => (
-                    <Link to={item.to} 
-                    className={`py-2 px-3 rounded-md text-neutral-200 text-xs ${index === 1 ? "bg-gradient-to-r from-indigo-500 to-indigo-800 border-0 light: text-neutral-200" : "border border-neutral-700/80 light: text-neutral-950 dark:text-neutral-200"}`}>{item.label}</Link>
-                  )) 
+                    <Link to={item.to} className={`py-2 px-3 rounded-md text-neutral-200 text-xs ${index === 1 ? "bg-gradient-to-r from-indigo-500 to-indigo-800 border-0 light: text-neutral-200" : "border border-neutral-700/80 light: text-neutral-950 dark:text-neutral-200"}`}>{item.label}</Link>
+                  ))
                 }
               </div>
             </div>
